@@ -1,0 +1,10 @@
+SublimeLinter-puppet-lint
+-------------------------------
+This linter plugin for SublimeLinter provides an interface to puppet-lint.
+
+** IMPORTANT! **
+
+Before this plugin will activate, you *must*
+follow the installation instructions here:
+
+https://github.com/stopdropandrew/SublimeLinter-puppet-lint

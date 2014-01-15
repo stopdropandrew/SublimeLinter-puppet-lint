@@ -1,0 +1,31 @@
+#
+# linter.py
+# Linter for SublimeLinter3, a code checking framework for Sublime Text 3
+#
+# Written by Andrew Grim
+# Copyright (c) 2014 Andrew Grim
+#
+# License: MIT
+#
+
+"""This module exports the PuppetLint plugin class."""
+
+from SublimeLinter.lint import Linter, util
+
+
+class PuppetLint(Linter):
+
+    """Provides an interface to puppet-lint."""
+
+    syntax = 'puppet'
+    cmd = ('puppet-lint', '--log-format', '%{linenumber}:%{column}:%{kind}:%{message}', '*', '@')
+    executable = None
+    regex = (
+        r'^(?P<line>\d+):(?P<col>\d+):'
+        r'((?P<warning>warning)|(?P<error>error)):'
+        r'(?P<message>.+)'
+    )
+    tempfile_suffix = '-'
+    error_stream = util.STREAM_STDOUT
+    defaults = {}
+    word_re = r'^((".+")|([-\w]+))'
