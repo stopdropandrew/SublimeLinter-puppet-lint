@@ -27,4 +27,4 @@ class PuppetLint(Linter):
     )
     tempfile_suffix = '-'
     error_stream = util.STREAM_STDOUT
-    word_re = r'^(".*"|[-\w]+)'
+    word_re = r'^(".*?"|[-\w]+)'
