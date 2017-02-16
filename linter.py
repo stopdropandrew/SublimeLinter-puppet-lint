@@ -18,7 +18,7 @@ class PuppetLint(Linter):
     """Provides an interface to puppet-lint."""
 
     syntax = 'puppet'
-    cmd = ('puppet-lint', '--log-format', '%{linenumber}:%{column}:%{kind}:%{message}', '*')
+    cmd = ('puppet-lint', '--log-format', '%{line}:%{column}:%{kind}:%{message}', '*')
     executable = None
     regex = (
         r'^(?P<line>\d+):(?P<col>\d+):'
